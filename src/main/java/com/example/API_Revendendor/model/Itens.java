@@ -2,12 +2,14 @@ package com.example.API_Revendendor.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "Item_Pedido")
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 public class Itens {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

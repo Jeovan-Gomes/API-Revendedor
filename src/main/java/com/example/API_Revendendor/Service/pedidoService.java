@@ -9,6 +9,8 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class pedidoService {
     @Autowired
@@ -36,5 +38,10 @@ public class pedidoService {
 
         pedidoRepository.save(pedido);
         return pedido;
+    }
+
+    public List<Pedido> MostrarPedido(Integer id){
+        List<Pedido> pedidos = pedidoRepository.findById(id).stream().toList();
+        return pedidos;
     }
 }
