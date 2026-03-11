@@ -3,6 +3,7 @@ package com.example.API_Revendendor.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
@@ -11,6 +12,7 @@ import java.util.Date;
 @Table(name = "Cliente")
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,5 +26,5 @@ public class Cliente {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_Perfil")
-    private Perfil id_Perfil;
+    private Perfil Perfil;
 }

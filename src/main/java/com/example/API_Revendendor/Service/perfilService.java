@@ -24,7 +24,6 @@ public class perfilService {
     private perfilRepository pRepository;
 
     @Transactional
-
     public Perfil SalvarPerfil(perfilDTO dto){
         Perfil perfil = new Perfil(0 ,dto.Nome(),dto.Celular(), dto.Email(), dto.Senha(), dto.CPF());
         pRepository.save(perfil);

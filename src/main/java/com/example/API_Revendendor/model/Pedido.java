@@ -2,12 +2,14 @@ package com.example.API_Revendendor.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
 @Entity
 @Table(name = "Pedido_Fazer")
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Pedido {
@@ -19,6 +21,7 @@ public class Pedido {
     @Column(name = "Valor_Total")
     private Double Valor_Total;
     @Column(name = "Status")
+    @Enumerated(EnumType.STRING)
     private Status Status;
 
     @ManyToOne(fetch = FetchType.LAZY)

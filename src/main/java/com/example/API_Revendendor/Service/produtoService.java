@@ -23,27 +23,18 @@ public class produtoService {
         this.perfilRepository = perfilRepository;
     }
 
-
-
-
     @Transactional
     public Produto SalvarProduto(produtoDTO dto){
-        if(dto == null){
-            return null;
-        }
-
-        Perfil perfil = perfilRepository.findById(dto.id_P().getId_Perfil()).orElseThrow(
+        Perfil perfil = perfilRepository.findById(dto.Perfil()).orElseThrow(
                 () -> new RuntimeException("Id não encontrado!"));
-
         Produto produto = new Produto(
-                0,
-                dto.nome(),
-                dto.descricao(),
-                dto.preco(),
-                dto.lucro(),
+                null,
+                dto.Nome(),
+                dto.Descricao(),
+                dto.Preco(),
+                dto.Lucro(),
                 perfil
         );
-
         produtoRepository.save(produto);
         return produto;
     }

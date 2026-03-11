@@ -3,10 +3,12 @@ package com.example.API_Revendendor.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "Pronto_Entrega")
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Produto {
@@ -24,5 +26,5 @@ public class Produto {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_Perfil")
-    private Perfil id_Perfil;
+    private Perfil Perfil;
 }
